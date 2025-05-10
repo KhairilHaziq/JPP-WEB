@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JPP Events</title>
+  <link href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js" nomodule></script>
+  <style>
+    .section {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<ion-app>
+
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>JPP Events & Organization</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+    <h2>Welcome to JPP!</h2>
+
+    <!-- Events Section -->
+    <div class="section">
+      <h3>Upcoming Events</h3>
+
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Leadership Workshop</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Learn how to lead teams effectively.
+          <br><br>
+          <ion-button expand="block" color="success" onclick="showEvent('Leadership Workshop', '30 May 2025', '10:00AM - 1:00PM', 'DEWAN KULIAH 1', 'Learn leadership skills for your future!')">View Details</ion-button>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Tech Meetup</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Explore new technology trends.
+          <br><br>
+          <ion-button expand="block" color="success" onclick="showEvent('Tech Meetup', '10 June 2025', '2:00PM - 5:00PM', 'CCNA 2', 'Discuss the latest in tech!')">View Details</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <!-- Registration Section -->
+    <div class="section">
+      <h3>Register for Event</h3>
+
+      <ion-item>
+        <ion-label position="floating">Full Name</ion-label>
+        <ion-input type="text" id="name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" id="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Phone Number</ion-label>
+        <ion-input type="tel" id="phone"></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" color="warning" onclick="submitRegistration()">Submit Registration</ion-button>
+    </div>
+
+    <!-- JPP Organization Section -->
+    <div class="section">
+      <h3>Meet the JPP Team</h3>
+
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Syful - President</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Diploma in Information Technology<br>
+          Responsible for leading JPP activities.
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Siti - Secretary</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Diploma in Information Technology<br>
+          Manages meeting minutes and documentation.
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Vibhu - Treasurer</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Diploma in Information Technology<br>
+          Manages JPP budget and finance reports.
+        </ion-card-content>
+      </ion-card>
+
+    </div>
+
+  </ion-content>
+
+</ion-app>
+
+<!-- JavaScript Functions -->
+<script>
+  function showEvent(title, date, time, venue, desc) {
+    alert(
+      "Event: " + title + "\n" +
+      "Date: " + date + "\n" +
+      "Time: " + time + "\n" +
+      "Venue: " + venue + "\n\n" +
+      desc
+    );
+  }
+
+  function submitRegistration() {
+    var name = document.getElementById('name').value;
+    if (name == "") {
+      alert("Please enter your name!");
+    } else {
+      alert("Thank you " + name + "! Registration Successful!");
+    }
+  }
+</script>
+
+</body>
+</html>
